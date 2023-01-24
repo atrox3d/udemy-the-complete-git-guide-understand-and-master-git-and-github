@@ -1,0 +1,3 @@
+- hash functions are one way functions
+- from same input, always same output
+- from variable length input, fixed length output
