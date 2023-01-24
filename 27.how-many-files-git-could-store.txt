@@ -1,0 +1,2 @@
+SHA1 has 2^180 possible combinations of bits
+that is the maximum number of files that git can store
