@@ -1,0 +1,15 @@
+- SHA1 is used by git to hash files
+- the hexadecimal representation of hash is shorter than the 128 bits
+- even a slight change in the input will lead to a completely different hash
+- shasum:
+    # hash of Hello, Git\n
+    echo "Hello, Git" | shasum
+    c9d5d04925b93d2fb99c73ab2b5869bde7405ca4 *-
+
+    # hash of Hello, Git without \n
+    echo -n "Hello, Git" | shasum
+    0a2b198f595e55060dec9f0e196c10de86f2ca1c *-
+
+    # hash of Hello, Git! without \n
+    echo -n "Hello, Git!" | shasum
+    1d4d7d92f79dc328154dc91424e6e740f8f5a563 *-
