@@ -1,0 +1,5 @@
+- MD5 128 bit
+- SHA1 160 bit
+- SHA256 256 bit
+- SHA3384 384 bit
+- SHA512 512 bit
