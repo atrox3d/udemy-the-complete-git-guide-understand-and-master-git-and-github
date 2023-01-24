@@ -1,0 +1,13 @@
+GIT OBJECT TYPES:
+
+- BLOB
+	store file contents
+	
+- TREE
+	store information abount directory entries
+	
+- COMMIT
+	stores different versions
+	
+- ANNOTATED TAG
+	persistent pointer to certain commits
