@@ -1,0 +1,7 @@
+# hash "Hello, Git" from stdin to stdout
+echo "Hello, Git" | git hash-object --stdin
+b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+
+# hash text from stdin to stdout and .git/objects/b7/aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+echo "Hello, Git" | git hash-object --stdin -w
+b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
