@@ -1,0 +1,55 @@
+- TREE OBJECTS STRUCURE:
+
+Tree objects are tables with the following fields:
+
+100644 blob b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e    file1.txt
+040000 tree aa07c520dec0a7516c18eb4c68b64ae1eb9b5ad6    dir1
+|     ||   ||                                       |   |
+|     ||   ||                                       |   +-- name
+|     ||   ||                                       +------ TAB
+|     ||   |+---------------------------------------------- SHA1
+|     ||   +----------------------------------------------- SPACE
+|     |+--------------------------------------------------- type
+|     +---------------------------------------------------- SPACE
++---------------------------------------------------------- permissions
+
+each record is a pointer to a blob
+
+
+- CREATE A TREE MANUALLY WITH GIT MKTREE:
+
+# find the blobs
+find .git/objects/ -type f
+.git/objects/44/00aae52a27341314f423095846b1f215a7cf08
+.git/objects/b7/aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+
+# create a text file outside of the repo describing the two blobs:
+nano ../tmp-tree.txt
+
+# create two records using the hashes without /:
+100644 blob b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e    file1.txt
+100644 blob 4400aae52a27341314f423095846b1f215a7cf08    file2.txt
+
+# save, exit and check:
+cat ../tmp-tree.txt
+
+# run the command to create the tree:
+cat ../tmp-tree.txt | git mktree
+3b95df0ac6365c72e9b0ff6c449645c87e6e1159
+
+# check tree blob exists
+ls .git/objects/3b/
+95df0ac6365c72e9b0ff6c449645c87e6e1159
+
+# check tree blob content
+git cat-file -p 3b95
+100644 blob b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e    file1.txt
+100644 blob 4400aae52a27341314f423095846b1f215a7cf08    file2.txt
+
+# check tree blob type
+git cat-file -t 3b95
+tree
+
+# check tree blob size
+git cat-file -s 3b95
+74
