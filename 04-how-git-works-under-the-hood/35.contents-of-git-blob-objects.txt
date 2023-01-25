@@ -1,0 +1,33 @@
+- BLOB OBJECTS STRUCTURE:
+
+blob 11\0Hello, Git
+|    | | |
+|    | | +- content
+|    | +--- delimiter (null)
+|    +----- length
++--------- type
+
+
+- EXAMINING BLOB CONTENT:
+
+Blob are compressed with zlib.
+It is possible to use python to decompress the content of a Blob:
+    import zlib
+    import sys
+
+    try:
+        p=sys.argv[1]
+        blob=open(p, 'rb').read()
+        print(zlib.decompress(blob))
+    except IndexError:
+        print('ERROR | missing parameter: filepath')
+    except FileNotFoundError:
+        print(f'ERROR | path{p} does not exist')
+    
+    output of script with argument .git/objects/44/00aae52a27341314f423095846b1f215a7cf08:
+    b'blob 30\x00Second file in Git repository\n'
+
+
+- CHECKING HASH WITH SHASUM:
+    echo -e "blob 30\0Second file in Git repository" | shasum 
+    4400aae52a27341314f423095846b1f215a7cf08 *-
