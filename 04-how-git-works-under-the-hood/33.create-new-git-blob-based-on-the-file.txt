@@ -1,0 +1,21 @@
+- create text file OUTSIDE git repo
+echo "Second file in Git repository" > ../new-file.txt
+
+# create hash of file to stdout
+git hash-object ../new-file.txt
+4400aae52a27341314f423095846b1f215a7cf08
+
+# create hash of file to .git/objects/
+git hash-object ../new-file.txt -w
+4400aae52a27341314f423095846b1f215a7cf08
+
+# check for new folder 44
+ls .git/objects/
+44  b7  info  pack
+
+# check for new file in objects/44
+ls .git/objects/44/
+00aae52a27341314f423095846b1f215a7cf08
+
+# delete external file
+rm ../new-file.txt
