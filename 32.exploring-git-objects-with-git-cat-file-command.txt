@@ -1,0 +1,19 @@
+GIT CAT-FILE OPTIONS:
+
+# contents of the object
+git cat-file -p <hash>
+
+    git cat-file -p b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+    Hello, Git
+
+# size of the object
+git cat-file -s <hash>
+
+    git cat-file -s b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+    11
+
+# type of the object
+git cat-file -t <hash>
+
+    git cat-file -t b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+    blob
