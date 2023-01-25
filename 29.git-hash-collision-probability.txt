@@ -1,0 +1,8 @@
+SHA1 collision probability:
+
+- the probability of each SHA1 hash is 1/2^160 = 6.8422...e-49
+
+- the probability of having the same hash with SHA1 is 1/2^320:
+
+    1/2^160 * 1/2^160 = 1/2^320 = 4.6816...e-97
+
