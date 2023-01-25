@@ -1,2 +1,3 @@
 #!/bin/bash
-touch $(./normalize.sh $*).txt
+HERE="$(dirname ${BASH_SOURCE[0]})"
+touch $("${HERE}"/normalize.sh $*).txt
