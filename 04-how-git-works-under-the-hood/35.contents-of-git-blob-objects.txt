@@ -5,7 +5,7 @@ blob 11\0Hello, Git
 |    | | +- content
 |    | +--- delimiter (null)
 |    +----- length
-+--------- type
++---------- type
 
 
 - EXAMINING BLOB CONTENT:
