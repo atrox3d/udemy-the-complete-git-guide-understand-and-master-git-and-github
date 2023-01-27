@@ -1,0 +1,25 @@
+FILES in first-project/
+
+
+  | WORKING   |      | STAGING |       | GIT        | 
+  | DIRECTORY |      | AREA    |       | REPOSITORY | 
+  |           |      | (INDEX) |       |            | 
+       |                  |                |
+      None              None              3b95df tree root
+                                           +---- b7aec5 blob file1.txt
+                                           +---- 4400aa blob file2.txt
+
+
+
+          |        ROOT DIRECTORY         |     # root tree, because no other tree points at it
+          |                               |
+          |         3b95df  Tree          |         
+          |                               |     
+          | file1.txt           file2.txt |     
+                |                   |                                                   
+        +-------+                   +--+                                            
+        |                              | 
+   | b7aec5  Blob |               | 4400aa  Blob                  |               
+   |              |               |                               |   
+   | Hello, Git   |               | Second file in Git repository |           
+
