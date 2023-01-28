@@ -1,0 +1,28 @@
+FILES in first-project/
+
+  | WORKING   |                       | STAGING |                      | GIT        | 
+  | DIRECTORY |                       | AREA    |                      | REPOSITORY | 
+  |           |                       | (INDEX) |                      |            | 
+       |                                   |                                 |
+       |  git checkout-index -a            |       git read-tree 3b95df      |    
+       |<----------------------------------|<--------------------------------|    
+       |                                   |                                 |     
+     3b95df tree root                    3b95df tree root                   3b95df tree root                     
+      +---- b7aec5 blob file1.txt         +---- b7aec5 blob file1.txt        +---- b7aec5 blob file1.txt              
+      +---- 4400aa blob file2.txt         +---- 4400aa blob file2.txt        +---- 4400aa blob file2.txt              
+
+
+
+# check for files in working directory
+ls
+
+# put files from staging area to working directory
+git checkout-index -a
+
+
+# check for files in working directory
+ls
+file1.txt
+file2.txt
+
+
