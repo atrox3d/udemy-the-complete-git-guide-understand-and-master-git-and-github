@@ -25,4 +25,14 @@ ls
 file1.txt
 file2.txt
 
+# check git status
+git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
 
