@@ -1,0 +1,56 @@
+FILES in first-project/
+
+  | WORKING   |      | STAGING |                        | GIT        | 
+  | DIRECTORY |      | AREA    |                        | REPOSITORY | 
+  |           |      | (INDEX) |                        |            | 
+       |                  |       git read-tree 3b95df      |    
+       |                  |<--------------------------------|    
+       |                  |                                 |     
+      None            3b95df tree root                   3b95df tree root                     
+                       +---- b7aec5 blob file1.txt        +---- b7aec5 blob file1.txt              
+                       +---- 4400aa blob file2.txt        +---- 4400aa blob file2.txt              
+
+# check files in working directory
+ls
+
+# check files in staging area
+git ls-files -s
+
+# find blobs
+find .git/objects/ -type f
+.git/objects/3b/95df0ac6365c72e9b0ff6c449645c87e6e1159
+.git/objects/44/00aae52a27341314f423095846b1f215a7cf08
+.git/objects/b7/aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+
+# check blob type for tree
+git cat-file -t 3b95
+tree
+
+# read tree and blobs into staging area
+git read-tree 3b95df
+
+# check files in staging area after git read-tree
+git ls-files
+file1.txt
+file2.txt
+
+git ls-files -s
+100644 b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e 0       file1.txt
+100644 4400aae52a27341314f423095846b1f215a7cf08 0       file2.txt
+
+# test git status
+git status
+On branch master
+
+No commits yet  
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file1.txt
+        deleted:    file2.txt
