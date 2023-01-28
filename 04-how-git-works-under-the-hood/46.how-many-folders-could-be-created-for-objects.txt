@@ -1,0 +1,10 @@
+the folder structure of .git/objects is:
+
+b4/aa56456465...
+
+where b4aa54566 without slash is the sha1 hash
+
+so, each folder if made by 2 hex digits, each one from 0 to f for a total of 16
+the formula is 16 * 16 = 256
+
+256 is the maximum number of folders
